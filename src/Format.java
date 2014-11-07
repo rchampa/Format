@@ -25,16 +25,20 @@ public class Format extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Format frame = new Format();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		
+		
+		Format frame = new Format();
+		frame.setVisible(true);
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					Format frame = new Format();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
 	}
 
 	/**
@@ -49,13 +53,13 @@ public class Format extends JFrame {
 		contentPane.setLayout(null);
 		
 		tf_source = new JTextField();
-		tf_source.setText("= &");
+		tf_source.setText("= & %2C");
 		tf_source.setBounds(26, 37, 86, 20);
 		contentPane.add(tf_source);
 		tf_source.setColumns(10);
 		
 		tf_dest = new JTextField();
-		tf_dest.setText(": NL");
+		tf_dest.setText(": NL ,");
 		tf_dest.setBounds(386, 37, 86, 20);
 		contentPane.add(tf_dest);
 		tf_dest.setColumns(10);
