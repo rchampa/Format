@@ -53,13 +53,13 @@ public class Format extends JFrame {
 		contentPane.setLayout(null);
 		
 		tf_source = new JTextField();
-		tf_source.setText("= & %2C");
+		tf_source.setText("= & %2C %5B %7B %22 %3A %7D %5D");
 		tf_source.setBounds(26, 37, 86, 20);
 		contentPane.add(tf_source);
 		tf_source.setColumns(10);
 		
 		tf_dest = new JTextField();
-		tf_dest.setText(": NL ,");
+		tf_dest.setText(": NL , [ { \" : } ]");
 		tf_dest.setBounds(386, 37, 86, 20);
 		contentPane.add(tf_dest);
 		tf_dest.setColumns(10);
@@ -133,7 +133,10 @@ public class Format extends JFrame {
 					replacement = "\n";
 				
 				source = source.replaceAll(regex, replacement);
+				
 			}
+			source = source.replaceAll(",", ",\n");
+			source = source.replaceAll("%20", " ");
 			
 			ta_dest.setText("");
 			ta_dest.append(source);
